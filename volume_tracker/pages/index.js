@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
-import '@devexpress/dx-react-chart-bootstrap4/dist/dx-react-chart-bootstrap4.css';
 
 import Header from '../pages/partials/Header';
 import Footer from '../pages/partials/Footer';
