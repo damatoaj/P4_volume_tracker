@@ -4,8 +4,8 @@ import { LineSeries, ValueAxis, ArgumentAxis } from '@devexpress/dx-react-chart'
 
 export default function HeartRate(props) {
     const data = props.data
-    console.log(props.data)
-    console.log(`Heart Rate, ${data} 🤬`)
+    // console.log(props.data)
+    // console.log(`Heart Rate, ${data} 🤬`)
     return (
         <h1>Heart Rate Graph Here</h1>
 

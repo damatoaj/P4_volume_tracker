@@ -4,7 +4,7 @@ import { LineSeries, ValueAxis, ArgumentAxis } from '@devexpress/dx-react-chart'
 
 export default function Volume (props) {
     const data = props.data
-    console.log(`Volume, ${data} 😭`)
+    // console.log(`Volume, ${data} 😭`)
 
     return (
         <h1>this is the volume graph</h1>
