@@ -1,6 +1,7 @@
 import {useState} from 'react';
 
 export default function Signup(props) {
+    const user = props.user
     const [fname, setFname] = useState('');
     const [lname, setLname] = useState('');
     const [email, setEmail] = useState('');
@@ -18,7 +19,7 @@ export default function Signup(props) {
                     type='text' 
                     id='fname' 
                     name='fname'
-                    onChange={e=> setFname(e.target.value)} 
+                    onChange={e=> setFname(user.fname)} 
                 /><br></br>
                 <label htmlFor='lname'>Last Name:</label>
                 <input 
