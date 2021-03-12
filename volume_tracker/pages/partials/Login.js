@@ -12,16 +12,18 @@ export default function Login (props) {
     const handleSubmit = e => {
         e.preventDefault();
         console.log("this is a login attempt")
-
-        axios.post(
-            `${process.env.REACT_APP_SERVER_URL}/api/login`,
-            {email}
-        ).then(response => {
-            // localStorage.setItem('jwtToken', response.data.token);
-            // setAuthToken(response.data.token);
-            props.handAuth(user);
-            setRedirect(true);
-        }).catch(err => console.log('WE HAVE AN ERROR AT LOGIN', ERR))
+        setRedirect(true);
+        props.setToken(1234);
+        props.handleAuth(user)
+        // axios.post(
+        //     `${process.env.REACT_APP_SERVER_URL}/api/login`,
+        //     {email}
+        // ).then(response => {
+        //     // localStorage.setItem('jwtToken', response.data.token);
+        //     // setAuthToken(response.data.token);
+        //     props.handAuth(user);
+        //     setRedirect(true);
+        // }).catch(err => console.log('WE HAVE AN ERROR AT LOGIN', ERR))
     }
 
     if (redirect) return <PrivateRoute />

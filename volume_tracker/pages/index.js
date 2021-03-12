@@ -11,8 +11,9 @@ import Form from '../pages/components/Form';
  
 
 export default function Home() {
-  const[currentUser, setCurrentUser] = useState(null);
+  const[currentUser, setCurrentUser] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [token, setToken] = useState(null);
 
   const handleAuth = user => {
     console.log("handling authentication...")
@@ -22,7 +23,7 @@ export default function Home() {
     } else {
       setCurrentUser(null);
       setIsAuthenticated(false);
-      localStorage.removeItem('jwtToken');
+      // localStorage.removeItem('jwtToken');
     }
   }
 
@@ -38,9 +39,11 @@ export default function Home() {
       />
       <About />
       <Form 
-        currentUser={currentUser}
+        setCurrentUser={setCurrentUser}
         isAuthenticated={isAuthenticated}
         handleAuth={handleAuth}
+        token={token}
+        setToken={setToken}
       />
       <Footer />
     </div>

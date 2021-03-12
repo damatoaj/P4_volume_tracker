@@ -18,15 +18,17 @@ export default function Form (props) {
     const [date, setDate] = useState(0);
     const [heartRate, setHeartRate] = useState(0)
     const [volume, setVolume] = useState(0);
+
     const data = dummyData;
     const user = dummyPerson;
+    // const [token, setToken] = useState(null);
 
     // console.log(user)
     
     const PrivateRoute = () => {
-        const token = 1234;
+        
         return (
-            token ? 
+            props.token ? 
             <>
                 <WorkoutForm 
                     date={date}
@@ -52,8 +54,9 @@ export default function Form (props) {
             <>
                 <Auth
                     user={user}
+                    setToken={props.setToken}
                     handleAuth={props.handleAuth}
-                    currentUser={props.currentUser}
+                    setCurrentUser={props.setCurrentUser}
                     isAuthenticated={props.isAuthenticated}
                 />
             </> 

@@ -6,10 +6,18 @@ export default function Signup(props) {
     const [lname, setLname] = useState('');
     const [email, setEmail] = useState('');
 
+    //TODO add email/password verification
+    const [redirect, setRedirect] = useState(false);
+
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Signup atttempt")
+        console.log("Signup atttempt");
+        setRedirect(true);
+        props.setToken(1234)
+        props.handleAuth(user)
     }
+    if(redirect) return( <PrivateRoute />)
+
     return (
         <form onSubmit={handleSubmit}>
             <fieldset>
