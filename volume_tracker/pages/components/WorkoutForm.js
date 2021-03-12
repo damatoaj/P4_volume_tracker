@@ -3,32 +3,38 @@ import { useState, useEffect } from 'react';
 
 export default function WorkoutForm (props) {
     console.log(props)
+
+    const handleSubmit = e => {
+        e.preventDefault();
+        console.log("Subitting data")
+    }
+
     return(
-        <form>
+        <form onSubmit={handleSubmit}>
             <fieldset>
                 <legend>Enter Your Exercise Data Here</legend>
-                <label for='date'>Workout Date:</label>
+                <label htmlFor='date'>Workout Date:</label>
                 <input 
                     type='date' 
                     id='date' 
                     name='date'
                     onChange={e => props.setDate(Date.parse(e.target.value))}
                 /><br></br>
-                <label for='time'>Workout Time (minutes):</label>
+                <label htmlFor='time'>Workout Time (minutes):</label>
                 <input 
                     type='number' 
                     id='time' 
                     name='time'
                     onChange={e => props.setMinutes(e.target.value)}
                 /><br></br>
-                <label for='heartRate'>Average Heart Rate:</label>
+                <label htmlFor='heartRate'>Average Heart Rate:</label>
                 <input 
                     type='number' 
                     id='heartRate' 
                     name='heartRate'
                     onChange={e => props.setHeartRate(e.target.value)}
                 /><br></br>
-                <label for='volume'>Exercise Volume:</label>
+                <label htmlFor='volume'>Exercise Volume:</label>
                 <input 
                     type='number' 
                     id='volume' 
