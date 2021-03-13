@@ -1,14 +1,27 @@
-import {useState} from 'react';
-import Button from 'react-bootstrap/Button'
+import { useState, useEffect } from 'react';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 // import setAuthToken from '../../utils/setAuthToken';
 import axios from 'axios';
 // import { redirect } from 'next/dist/next-server/server/api-utils';
+
+function simulateNetworkRequest() {
+    return new Promise((resolve) => setTimeout(resolve, 1000));
+};
 
 export default function Login (props) {
     const user = props.user
     const [email, setEmail] = useState('');
     const [redirect, setRedirect] = useState(false);
-    console.log(user)
+    const [isLoading, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (isLoading) {
+            simulateNetworkRequest().then(() => {
+                setLoading(false);
+            });
+        }
+    }, [isLoading])
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -18,32 +31,37 @@ export default function Login (props) {
         props.handleAuth(user)
     }
 
+    const handleClick = () => setLoading(true);
+
     if (redirect) return <PrivateRoute />
 
     return (
         <div className="card">
-            <form onSubmit={handleSubmit} className="form-inline">
+            <Form onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>Login To Your Account</legend>
-                    <label htmlFor='email'>Email:</label>
-                    <input 
-                        className="form-control"
-                        type='email' 
-                        id='email' 
-                        name='email'
-                        onChange={e=> setEmail(e.target.value)}
-                    /><br></br>
-                    <Button as="input" type='submit' value="Signup" variant="primary" size="lg" active/>
+                    <Form.Group>
+                        <Form.Label htmlFor='email'>Email</Form.Label>
+                        <Form.Control 
+                            type='email' 
+                            id='email' 
+                            name='email'
+                            onChange={e=> setEmail(e.target.value)}
+                        />
+                    </Form.Group>
+                    <Button 
+                        as="input"
+                        disabled={isLoading} 
+                        onClick={!isLoading ? handleClick: null }
+                        type='submit' 
+                        value="Submit"
+                        variant="primary" 
+                        size="lg" 
+                        active
+                    />               
                 </fieldset>
-            </form>
+            </Form>
         </div>    
     )
 }
 
-{/* <script>
-    (document).ready(function(){
-        (".btn-primary:first").click(function(){
-            (this).button('toggle');
-        })
-    }
-</script> */}
