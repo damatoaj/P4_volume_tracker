@@ -20,20 +20,22 @@ export default function Login (props) {
     if (redirect) return <PrivateRoute />
 
     return (
-        <form onSubmit={handleSubmit} className="form-inline">
-            <fieldset>
-                <legend>Login To Your Account</legend>
-                <label htmlFor='email'>Email:</label>
-                <input 
-                    className="form-control"
-                    type='email' 
-                    id='email' 
-                    name='email'
-                    onChange={e=> setEmail(e.target.value)}
-                /><br></br>
-                <input type='submit' value="Login" className="btn btn-primary"/>
-            </fieldset>
-        </form>
+        <div className="card">
+            <form onSubmit={handleSubmit} className="form-inline">
+                <fieldset>
+                    <legend>Login To Your Account</legend>
+                    <label htmlFor='email'>Email:</label>
+                    <input 
+                        className="form-control"
+                        type='email' 
+                        id='email' 
+                        name='email'
+                        onChange={e=> setEmail(e.target.value)}
+                    /><br></br>
+                    <input type='submit' value="Login" className="btn btn-primary"/>
+                </fieldset>
+            </form>
+        </div>    
     )
 }
 

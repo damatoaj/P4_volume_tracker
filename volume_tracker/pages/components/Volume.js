@@ -10,7 +10,7 @@ export default function Volume (props) {
         <h1>Volume Compared to Minutes</h1>
             {/* <ResponsiveContainer height="100%" width="100%"> */}
                 <LineChart 
-                    width={730} 
+                    width={430} 
                     height={250} 
                     data={data}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

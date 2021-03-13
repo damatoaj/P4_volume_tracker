@@ -41,35 +41,40 @@ export default function Form (props) {
                 heartRate={heartRate}
                 setHeartRate={setHeartRate}
             />
-            <div id="demo" className="carousel slide" data-ride="carousel">
+            <div id="graph" className="carousel slide " data-ride="carousel">
                 <ul className="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" className="active"></li>
-                    <li data-target="#demo" data-slide-to="1" ></li>
-                    <li data-target="#demo" data-slide-to="2" ></li>
+                    <li data-target="#graph" data-slide-to="0" className="active"></li>
+                    <li data-target="#graph" data-slide-to="1" ></li>
+                    <li data-target="#graph" data-slide-to="2" ></li>
                 </ul>
                 <div className="carousel-inner">
                     <div className="carousel-item-active">
-                        <Volume 
+                        {/* <Volume 
                             data={data}
-                            />
+                        /> */}
+                        <h1>first</h1>
                     </div>
                     <div className="carousel-item">
-                        <HeartRate 
+                        {/* <HeartRate 
                             data={data}
-                        />
+                        /> */}
+                        <h1>second</h1>
                     </div>
                     <div className="carousel-item">
-                        <ExerciseTime 
+                        {/* <ExerciseTime 
                             data={data}
-                        />
+                        /> */}
+                        <h1>third</h1>
                     </div>
-                </div>
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>  
+                    <a class="carousel-control-prev" href="#graph" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#graph" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div> 
             </div>
         </>
         :
