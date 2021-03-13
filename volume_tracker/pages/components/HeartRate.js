@@ -10,7 +10,7 @@ export default function HeartRate(props) {
             <h2>Volume Compared to Heart Rate</h2>
             {/* <ResponsiveContainer height="100%" width="100%"> */}
                 <LineChart 
-                    width={50} 
+                    width={730} 
                     height={250} 
                     data={data}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}

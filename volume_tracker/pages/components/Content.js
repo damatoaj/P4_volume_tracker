@@ -1,5 +1,6 @@
 import { useState, useEffect, Component } from 'react';
 import Head from 'next/head';
+import Carousel from 'react-bootstrap/Carousel';
 
 import Volume from './Volume';
 import HeartRate from './HeartRate';
@@ -41,41 +42,24 @@ export default function Form (props) {
                 heartRate={heartRate}
                 setHeartRate={setHeartRate}
             />
-            <div id="graph" className="carousel slide " data-ride="carousel">
-                <ul className="carousel-indicators">
-                    <li data-target="#graph" data-slide-to="0" className="active"></li>
-                    <li data-target="#graph" data-slide-to="1" ></li>
-                    <li data-target="#graph" data-slide-to="2" ></li>
-                </ul>
-                <div className="carousel-inner">
-                    <div className="carousel-item-active">
-                        {/* <Volume 
-                            data={data}
-                        /> */}
-                        <h1>first</h1>
-                    </div>
-                    <div className="carousel-item">
-                        {/* <HeartRate 
-                            data={data}
-                        /> */}
-                        <h1>second</h1>
-                    </div>
-                    <div className="carousel-item">
-                        {/* <ExerciseTime 
-                            data={data}
-                        /> */}
-                        <h1>third</h1>
-                    </div>
-                    <a class="carousel-control-prev" href="#graph" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#graph" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div> 
-            </div>
+            
+            <Carousel>
+                <Carousel.Item>
+                    <Volume 
+                        data={data}
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <HeartRate 
+                        data={data}
+                    />
+                </Carousel.Item>
+                <Carousel.Item>
+                    <ExerciseTime 
+                        data={data}
+                    />
+                </Carousel.Item>
+            </Carousel>
         </>
         :
         <>

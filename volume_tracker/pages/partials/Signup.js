@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Button from 'react-bootstrap/Button'
 
 export default function Signup(props) {
     const user = props.user
@@ -47,7 +48,7 @@ export default function Signup(props) {
                         name='email'
                         onChange={e=> setEmail(e.target.value)}
                     /><br></br>
-                    <input type='submit' value="Signup" className="btn btn-primary"/>
+                    <Button as="input" type='submit' value="Signup" variant="primary" size="lg" active/>
                 </fieldset>
             </form>
         </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import Button from 'react-bootstrap/Button'
 
 export default function WorkoutForm (props) {
     console.log(props)
@@ -48,7 +48,7 @@ export default function WorkoutForm (props) {
                         name='volume'
                         value={props.volume}
                     /><br></br>
-                    <input type='submit' value="Submit" class="btn btn-primary btn-block"/>
+                    <Button as="input" type='submit' value="Signup" variant="primary" size="lg" active/>
                 </fieldset>
             </form>
         </div>

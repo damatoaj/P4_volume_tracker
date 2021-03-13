@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import Button from 'react-bootstrap/Button'
 // import setAuthToken from '../../utils/setAuthToken';
 import axios from 'axios';
 // import { redirect } from 'next/dist/next-server/server/api-utils';
@@ -32,7 +33,7 @@ export default function Login (props) {
                         name='email'
                         onChange={e=> setEmail(e.target.value)}
                     /><br></br>
-                    <input type='submit' value="Login" className="btn btn-primary"/>
+                    <Button as="input" type='submit' value="Signup" variant="primary" size="lg" active/>
                 </fieldset>
             </form>
         </div>    
