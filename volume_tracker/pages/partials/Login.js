@@ -15,32 +15,32 @@ export default function Login (props) {
         setRedirect(true);
         props.setToken(1234);
         props.handleAuth(user)
-        // axios.post(
-        //     `${process.env.REACT_APP_SERVER_URL}/api/login`,
-        //     {email}
-        // ).then(response => {
-        //     // localStorage.setItem('jwtToken', response.data.token);
-        //     // setAuthToken(response.data.token);
-        //     props.handAuth(user);
-        //     setRedirect(true);
-        // }).catch(err => console.log('WE HAVE AN ERROR AT LOGIN', ERR))
     }
 
     if (redirect) return <PrivateRoute />
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form-inline">
             <fieldset>
                 <legend>Login To Your Account</legend>
                 <label htmlFor='email'>Email:</label>
                 <input 
+                    className="form-control"
                     type='email' 
                     id='email' 
                     name='email'
                     onChange={e=> setEmail(e.target.value)}
                 /><br></br>
-                <input type='submit' value="Login"/>
+                <input type='submit' value="Login" className="btn btn-primary"/>
             </fieldset>
         </form>
     )
 }
+
+{/* <script>
+    (document).ready(function(){
+        (".btn-primary:first").click(function(){
+            (this).button('toggle');
+        })
+    }
+</script> */}

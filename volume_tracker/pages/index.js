@@ -7,7 +7,7 @@ import Header from '../pages/partials/Header';
 import Footer from '../pages/partials/Footer';
 
 import About from '../pages/components/About';
-import Form from '../pages/components/Form';
+import Content from './components/Content';
  
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
         handleAuth={handleAuth}
       />
       <About />
-      <Form 
+      <Content 
         setCurrentUser={setCurrentUser}
         isAuthenticated={isAuthenticated}
         handleAuth={handleAuth}

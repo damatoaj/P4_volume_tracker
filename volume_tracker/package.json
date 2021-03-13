@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "bootstrap": "^5.0.0-beta2",
     "moment": "^2.29.1",
     "next": "10.0.8",
     "react": "17.0.1",

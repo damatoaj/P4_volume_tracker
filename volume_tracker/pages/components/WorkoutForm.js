@@ -6,15 +6,18 @@ export default function WorkoutForm (props) {
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log("Subitting data")
+        console.log("Submitting data")
     }
 
+    
+
     return(
-        <form onSubmit={handleSubmit}>
-            <fieldset>
+        <form>
+            <fieldset onSubmit={handleSubmit}>
                 <legend>Enter Your Exercise Data Here</legend>
                 <label htmlFor='date'>Workout Date:</label>
                 <input 
+                    className="form-control"
                     type='date' 
                     id='date' 
                     name='date'
@@ -22,6 +25,7 @@ export default function WorkoutForm (props) {
                 /><br></br>
                 <label htmlFor='time'>Workout Time (minutes):</label>
                 <input 
+                    className="form-control"
                     type='number' 
                     id='time' 
                     name='time'
@@ -29,6 +33,7 @@ export default function WorkoutForm (props) {
                 /><br></br>
                 <label htmlFor='heartRate'>Average Heart Rate:</label>
                 <input 
+                    className="form-control"
                     type='number' 
                     id='heartRate' 
                     name='heartRate'
@@ -36,12 +41,13 @@ export default function WorkoutForm (props) {
                 /><br></br>
                 <label htmlFor='volume'>Exercise Volume:</label>
                 <input 
+                    className="form-control"
                     type='number' 
                     id='volume' 
                     name='volume'
                     value={props.volume}
                 /><br></br>
-                <input type='submit' value="Submit"/>
+                <input type='submit' value="Submit" class="btn btn-primary"/>
             </fieldset>
         </form>
     )

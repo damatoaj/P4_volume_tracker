@@ -10,20 +10,32 @@ export default function ExerciseTime (props) {
         <section>
             <h2>Minutes compared to Heart Rate</h2>
             {/* <ResponsiveContainer height="100%" width="100%"> */}
-                <LineChart width={730} height={250} data={data}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
+                <LineChart 
+                    width={730} 
+                    height={250} 
+                    data={data}
+                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey={data.date} >
-                        <Label value="Workout Session" offset={10} position="bottom"/>
+                        <Label value="Workout Session" position="top"/>
                     </XAxis>
-                    <YAxis yAxisId="left">
-                        <Label value="Minutes" angle="-90"/>
+                    <YAxis yAxisId="left" type="number" >
+                        <Label 
+                            value="Minutes" 
+                            angle="-90" 
+                            position="left" 
+                        />
                     </YAxis>
-                    <YAxis yAxisId="right" orientation="right" angle="90">
-                        <Label />
+                    <YAxis yAxisId="right" orientation="right" type="number" domain={['dataMin - 20', 'dataMax + 20']}>
+                        <Label 
+                            value="Heart Rate" 
+                            angle="90"
+                            position="right"
+                        />
                     </YAxis>
                     <Tooltip />
-                    <Legend />
+                    <Legend verticalAlign="top"/>
                     <Line yAxisId="left" type="monotone" dataKey="minutes" stroke="#32a852" />
                     <Line yAxisId="right" type="monotone" dataKey="heartRate" stroke="#db2b14" />
                 </LineChart>
