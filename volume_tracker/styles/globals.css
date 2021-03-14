@@ -185,6 +185,31 @@ section {
   color: white;
 }
 
-#label {
+#carousel {
   color:white;
+  
+}
+
+#volume-carousel {
+  border:2px solid white;
+  color:white;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#volume-time {
+  border:2px solid white;
+  color:white;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+#volume-heartRate {
+  border:2px solid white;
+  color:white;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 2.5rem;
 }

@@ -43,18 +43,18 @@ export default function Form (props) {
                 setHeartRate={setHeartRate}
             />
             
-            <Carousel>
-                <Carousel.Item>
+            <Carousel id="carousel">
+                <Carousel.Item id="volume-carousel">
                     <Volume 
                         data={data}
                     />
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item id="volume-heartRate">
                     <HeartRate 
                         data={data}
                     />
                 </Carousel.Item>
-                <Carousel.Item>
+                <Carousel.Item id="volume-time">
                     <ExerciseTime 
                         data={data}
                     />
