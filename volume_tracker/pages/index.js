@@ -8,6 +8,7 @@ import Footer from '../pages/partials/Footer';
 
 import About from '../pages/components/About';
 import Content from './components/Content';
+// import { propTypes } from 'react-bootstrap/esm/Image';
  
 
 export default function Home() {
@@ -34,8 +35,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header 
+        setCurrentUser={setCurrentUser}
         currentUser={currentUser}
         handleAuth={handleAuth}
+        setToken={setToken}
       />
       <About />
       <Content 

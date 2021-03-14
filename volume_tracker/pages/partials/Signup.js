@@ -69,7 +69,6 @@ export default function Signup(props) {
                         />
                     </Form.Group>
                     <Button 
-                        className="button"
                         as="input"
                         disabled={isLoading} 
                         onClick={!isLoading ? handleClick: null }
