@@ -18,21 +18,18 @@ export default function WorkoutForm (props) {
             });
         }
     }, [isLoading])
-
-    const handleSubmit = e => {
+    
+    const handleClick = e => {
+        setLoading(true)
         e.preventDefault();
         console.log("Submitting data")
-    }
-
-    const handleClick = () => {
-        setLoading(true)
     };
 
     
 
     return(
         <div className="card">
-            <Form onSubmit={handleSubmit}>
+            <Form>
                 <fieldset >
                     <legend>Enter Your Exercise Data Here</legend>
                     <Form.Group>

@@ -1,6 +1,7 @@
 import {useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card'
 
 function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 1000));
@@ -24,23 +25,20 @@ export default function Signup(props) {
         }
     }, [isLoading])
 
-    const handleClick = () => {
+    const handleClick = (e) => {
         setLoading(true);
-        console.log('handle click works')
-    }
-
-    const handleSubmit = e => {
         e.preventDefault();
-        console.log("Signup atttempt");
         setRedirect(true);
         props.setToken(1234)
         props.handleAuth(user)
+        console.log('handle click works')
     }
+
     if(redirect) return( <PrivateRoute />)
 
     return (
-        <div className="card">
-            <Form onSubmit={handleSubmit}>
+        <Card>
+            <Form>
                 <fieldset>
                     <legend>Signup for the App</legend>
                     <Form.Group>
@@ -82,6 +80,6 @@ export default function Signup(props) {
                     />              
                 </fieldset>
             </Form>
-        </div>
+        </Card>
     )
 }

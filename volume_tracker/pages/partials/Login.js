@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card'
 // import setAuthToken from '../../utils/setAuthToken';
 import axios from 'axios';
 // import { redirect } from 'next/dist/next-server/server/api-utils';
@@ -23,15 +24,13 @@ export default function Login (props) {
         }
     }, [isLoading])
 
-    const handleSubmit = e => {
+
+    const handleClick = e => {
         e.preventDefault();
         console.log("this is a login attempt")
         setRedirect(true);
         props.setToken(1234);
         props.handleAuth(user)
-    }
-
-    const handleClick = () => {
         setLoading(true);
         console.log('login click working')
     }
@@ -39,8 +38,8 @@ export default function Login (props) {
     if (redirect) return <PrivateRoute />
 
     return (
-        <div className="card">
-            <Form onSubmit={handleSubmit}>
+        <Card>
+            <Form>
                 <fieldset>
                     <legend>Login To Your Account</legend>
                     <Form.Group>
@@ -64,7 +63,7 @@ export default function Login (props) {
                     />               
                 </fieldset>
             </Form>
-        </div>    
+        </Card>    
     )
 }
 
