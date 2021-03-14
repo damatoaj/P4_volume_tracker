@@ -6,18 +6,19 @@ export default function Volume (props) {
     // console.log(`Volume, ${data} 😭`)
 
     return (
-        <section id="volume-graph">
+        <section>
         <h1>Volume Compared to Minutes</h1>
-            {/* <ResponsiveContainer height="100%" width="100%"> */}
+            <ResponsiveContainer height="100%" width="100%">
                 <LineChart 
                     width={730} 
                     height={250} 
                     data={data}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    id="volume-graph"
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey={data.date} >
-                        <Label value="Workout Session" position="top"/>
+                        <Label value="Workout Session" position="top" id="label"/>
                     </XAxis>
                     <YAxis yAxisId="left" type="number" >
                         <Label 
@@ -38,7 +39,7 @@ export default function Volume (props) {
                     <Line yAxisId="left" type="monotone" dataKey="volume" stroke="#8884d8" />
                     <Line yAxisId="right" type="monotone" dataKey="minutes" stroke="#32a852"/>
                 </LineChart>
-            {/* </ResponsiveContainer> */}
+            </ResponsiveContainer>
         </section>
     )
 }

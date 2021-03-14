@@ -9,16 +9,17 @@ export default function ExerciseTime (props) {
     return (
         <section>
             <h1>Minutes compared to Heart Rate</h1>
-            {/* <ResponsiveContainer height="100%" width="100%"> */}
+            <ResponsiveContainer height="100%" width="100%">
                 <LineChart 
                     width={730} 
                     height={250} 
                     data={data}
-                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    margin={{ top: 5, right: 30, left: 30, bottom: 5 }}
+                    id="exerciseTime-graph"
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey={data.date} >
-                        <Label value="Workout Session" position="top"/>
+                        <Label value="Workout Session" position="top" className="workout-label"/>
                     </XAxis>
                     <YAxis yAxisId="left" type="number" >
                         <Label 
@@ -39,7 +40,7 @@ export default function ExerciseTime (props) {
                     <Line yAxisId="left" type="monotone" dataKey="minutes" stroke="#32a852" />
                     <Line yAxisId="right" type="monotone" dataKey="heartRate" stroke="#db2b14" />
                 </LineChart>
-            {/* </ResponsiveContainer> */}
+            </ResponsiveContainer>
         </section>
     )
 }

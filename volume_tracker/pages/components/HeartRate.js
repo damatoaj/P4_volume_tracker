@@ -8,12 +8,13 @@ export default function HeartRate(props) {
     return (
         <section>
             <h1>Volume Compared to Heart Rate</h1>
-            {/* <ResponsiveContainer height="100%" width="100%"> */}
+            <ResponsiveContainer height="100%" width="100%">
                 <LineChart 
                     width={730} 
                     height={250} 
                     data={data}
                     margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                    id="heartRate-graph"
                 >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis dataKey={data.date} >
@@ -38,7 +39,7 @@ export default function HeartRate(props) {
                     <Line yAxisId="left" type="monotone" dataKey="volume" stroke="#8884d8" />
                     <Line yAxisId="right" type="monotone" dataKey="heartRate" stroke="#db2b14" />
                 </LineChart>
-            {/* </ResponsiveContainer> */}
+            </ResponsiveContainer>
         </section>
     )
 };
