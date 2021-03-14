@@ -31,7 +31,7 @@ export default function Form (props) {
   
     return (
         props.token ? 
-        <>
+        <div id="landing-page">
             <WorkoutForm 
                 date={date}
                 setDate={setDate}
@@ -60,9 +60,9 @@ export default function Form (props) {
                     />
                 </Carousel.Item>
             </Carousel>
-        </>
+        </div>
         :
-        <>
+        <div id="auth-landing">
             <Auth
                 user={user}
                 setToken={props.setToken}
@@ -70,6 +70,6 @@ export default function Form (props) {
                 setCurrentUser={props.setCurrentUser}
                 isAuthenticated={props.isAuthenticated}
             />
-        </> 
+        </div> 
     )
 }

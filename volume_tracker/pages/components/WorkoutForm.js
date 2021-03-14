@@ -29,11 +29,11 @@ export default function WorkoutForm (props) {
     
 
     return(
-        <Card className="card">
-            <Form className="form">
+
+            <Form id="workout-form">
                 <fieldset >
                     <legend>Enter Your Exercise Data Here</legend>
-                    <Form.Group>
+                    <Form.Group id="workout-date">
                         <Form.Label htmlFor='date'>Workout Date:</Form.Label>
                         <Form.Control 
                             className="form-control"
@@ -43,7 +43,7 @@ export default function WorkoutForm (props) {
                             onChange={e => props.setDate(Date.parse(e.target.value))}
                         />
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group id="workout-time">
                         <Form.Label htmlFor='time'>Workout Time (minutes):</Form.Label>
                         <Form.Control
                             className="form-control"
@@ -53,7 +53,7 @@ export default function WorkoutForm (props) {
                             onChange={e => props.setMinutes(e.target.value)}
                         />
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group id="workout-heartRate">
                         <Form.Label htmlFor='heartRate'>Average Heart Rate:</Form.Label>
                         <Form.Control 
                             className="form-control"
@@ -63,7 +63,7 @@ export default function WorkoutForm (props) {
                             onChange={e => props.setHeartRate(e.target.value)}
                         />
                     </Form.Group>
-                    <Form.Group>
+                    <Form.Group id="workout-volume">
                         <Form.Label htmlFor='volume'>Exercise Volume:</Form.Label>
                         <Form.Control 
                             className="form-control"
@@ -86,6 +86,6 @@ export default function WorkoutForm (props) {
                     />
                 </fieldset>
             </Form>
-        </Card>
+
     )
 }

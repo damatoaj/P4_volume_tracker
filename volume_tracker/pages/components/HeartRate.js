@@ -7,7 +7,7 @@ export default function HeartRate(props) {
     // console.log(`Heart Rate, ${data} 🤬`)
     return (
         <section>
-            <h2>Volume Compared to Heart Rate</h2>
+            <h1>Volume Compared to Heart Rate</h1>
             {/* <ResponsiveContainer height="100%" width="100%"> */}
                 <LineChart 
                     width={730} 

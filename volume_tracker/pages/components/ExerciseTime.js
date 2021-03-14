@@ -8,7 +8,7 @@ export default function ExerciseTime (props) {
 
     return (
         <section>
-            <h2>Minutes compared to Heart Rate</h2>
+            <h1>Minutes compared to Heart Rate</h1>
             {/* <ResponsiveContainer height="100%" width="100%"> */}
                 <LineChart 
                     width={730} 

@@ -37,49 +37,47 @@ export default function Signup(props) {
     if(redirect) return( <PrivateRoute />)
 
     return (
-        <Card className="card">
-            <Form className="form">
-                <fieldset>
-                    <legend>Signup for the App</legend>
-                    <Form.Group>
-                        <Form.Label htmlFor='fname'>First Name:</Form.Label>
-                        <Form.Control 
-                            type='text' 
-                            id='fname' 
-                            name='fname'
-                            onChange={e=> setFname(user.fname)} 
-                        />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label htmlFor='lname'>Last Name:</Form.Label>
-                        <Form.Control 
-                            type='text' 
-                            id='lname' 
-                            name='lname'
-                            onChange={e => setLname(e.target.value)} 
-                        />
-                    </Form.Group>
-                    <Form.Group>
-                        <Form.Label htmlFor='email'>Email:</Form.Label>
-                        <Form.Control 
-                            type='email' 
-                            id='email' 
-                            name='email'
-                            onChange={e=> setEmail(e.target.value)}
-                        />
-                    </Form.Group>
-                    <Button 
-                        as="input"
-                        disabled={isLoading} 
-                        onClick={!isLoading ? handleClick: null }
-                        type='submit' 
-                        value="Submit"
-                        variant="primary" 
-                        size="lg" 
-                        active
-                    />              
-                </fieldset>
-            </Form>
-        </Card>
+        <Form id="signup-form">
+            <fieldset>
+                <legend>Signup for the App</legend>
+                <Form.Group id="signup-fname">
+                    <Form.Label htmlFor='fname'>First Name:</Form.Label>
+                    <Form.Control 
+                        type='text' 
+                        id='fname' 
+                        name='fname'
+                        onChange={e=> setFname(user.fname)} 
+                    />
+                </Form.Group>
+                <Form.Group id="signup-lname">
+                    <Form.Label htmlFor='lname'>Last Name:</Form.Label>
+                    <Form.Control 
+                        type='text' 
+                        id='lname' 
+                        name='lname'
+                        onChange={e => setLname(e.target.value)} 
+                    />
+                </Form.Group>
+                <Form.Group id="signup-email">
+                    <Form.Label htmlFor='email'>Email:</Form.Label>
+                    <Form.Control 
+                        type='email' 
+                        id='email' 
+                        name='email'
+                        onChange={e=> setEmail(e.target.value)}
+                    />
+                </Form.Group>
+                <Button 
+                    as="input"
+                    disabled={isLoading} 
+                    onClick={!isLoading ? handleClick: null }
+                    type='submit' 
+                    value="Submit"
+                    variant="primary" 
+                    size="lg" 
+                    active
+                />              
+            </fieldset>
+        </Form>
     )
 }

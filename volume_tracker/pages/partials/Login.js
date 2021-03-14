@@ -38,32 +38,30 @@ export default function Login (props) {
     if (redirect) return <PrivateRoute />
 
     return (
-        <Card className="card">
-            <Form className="form">
-                <fieldset>
-                    <legend>Login To Your Account</legend>
-                    <Form.Group>
-                        <Form.Label htmlFor='email'>Email</Form.Label>
-                        <Form.Control 
-                            type='email' 
-                            id='email' 
-                            name='email'
-                            onChange={e=> setEmail(e.target.value)}
-                        />
-                    </Form.Group>
-                    <Button 
-                        as="input"
-                        disabled={isLoading} 
-                        onClick={!isLoading ? handleClick: null }
-                        type='submit' 
-                        value="Submit"
-                        variant="primary" 
-                        size="lg" 
-                        active
-                    />               
-                </fieldset>
-            </Form>
-        </Card>    
+        <Form id="login-form">
+            <fieldset>
+                <legend>Login To Your Account</legend>
+                <Form.Group id="login-email">
+                    <Form.Label htmlFor='email'>Email:</Form.Label>
+                    <Form.Control 
+                        type='email' 
+                        id='email' 
+                        name='email'
+                        onChange={e=> setEmail(e.target.value)}
+                    />
+                </Form.Group>
+                <Button 
+                    as="input"
+                    disabled={isLoading} 
+                    onClick={!isLoading ? handleClick: null }
+                    type='submit' 
+                    value="Submit"
+                    variant="primary" 
+                    size="lg" 
+                    active
+                />               
+            </fieldset>
+        </Form>    
     )
 }
 
