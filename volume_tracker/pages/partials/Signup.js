@@ -37,8 +37,8 @@ export default function Signup(props) {
     if(redirect) return( <PrivateRoute />)
 
     return (
-        <Card>
-            <Form>
+        <Card className="card">
+            <Form className="form">
                 <fieldset>
                     <legend>Signup for the App</legend>
                     <Form.Group>
@@ -69,6 +69,7 @@ export default function Signup(props) {
                         />
                     </Form.Group>
                     <Button 
+                        className="button"
                         as="input"
                         disabled={isLoading} 
                         onClick={!isLoading ? handleClick: null }

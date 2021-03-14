@@ -1,8 +1,9 @@
 import DropdownButton from 'react-bootstrap/DropdownButton';
+import Card from 'react-bootstrap/Card';
 import { Dropdown} from 'react-bootstrap';
 export default function About() {
     return(
-        <div className="card">
+        <Card className="Card">
             <section>
                 <DropdownButton id="about-volume" title="Why Track Volume?" size="lg" block>
                     <Dropdown.ItemText>
@@ -21,6 +22,6 @@ export default function About() {
                     </Dropdown.ItemText>
                 </DropdownButton>
             </section>
-        </div>
+        </Card>
     )
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import Card from 'react-bootstrap/Card';
 
 
 
@@ -28,8 +29,8 @@ export default function WorkoutForm (props) {
     
 
     return(
-        <div className="card">
-            <Form>
+        <Card className="card">
+            <Form className="form">
                 <fieldset >
                     <legend>Enter Your Exercise Data Here</legend>
                     <Form.Group>
@@ -81,9 +82,10 @@ export default function WorkoutForm (props) {
                         variant="primary" 
                         size="lg" 
                         active
+                        block
                     />
                 </fieldset>
             </Form>
-        </div>
+        </Card>
     )
 }

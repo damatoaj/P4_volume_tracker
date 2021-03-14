@@ -38,8 +38,8 @@ export default function Login (props) {
     if (redirect) return <PrivateRoute />
 
     return (
-        <Card>
-            <Form>
+        <Card className="card">
+            <Form className="form">
                 <fieldset>
                     <legend>Login To Your Account</legend>
                     <Form.Group>
