@@ -34,21 +34,23 @@ export default function Home() {
         <title>Volume Tracker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header 
-        setCurrentUser={setCurrentUser}
-        currentUser={currentUser}
-        handleAuth={handleAuth}
-        setToken={setToken}
-      />
-      <About />
-      <Content 
-        setCurrentUser={setCurrentUser}
-        isAuthenticated={isAuthenticated}
-        handleAuth={handleAuth}
-        token={token}
-        setToken={setToken}
-      />
-      <Footer />
+      <div >
+        <Header 
+          setCurrentUser={setCurrentUser}
+          currentUser={currentUser}
+          handleAuth={handleAuth}
+          setToken={setToken}
+        />
+        <About />
+        <Content 
+          setCurrentUser={setCurrentUser}
+          isAuthenticated={isAuthenticated}
+          handleAuth={handleAuth}
+          token={token}
+          setToken={setToken}
+        />
+        <Footer />
+      </div>
     </div>
   )
 }
