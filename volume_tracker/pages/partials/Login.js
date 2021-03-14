@@ -31,7 +31,10 @@ export default function Login (props) {
         props.handleAuth(user)
     }
 
-    const handleClick = () => setLoading(true);
+    const handleClick = () => {
+        setLoading(true);
+        console.log('login click working')
+    }
 
     if (redirect) return <PrivateRoute />
 

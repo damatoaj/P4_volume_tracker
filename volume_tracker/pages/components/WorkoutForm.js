@@ -32,8 +32,8 @@ export default function WorkoutForm (props) {
 
     return(
         <div className="card">
-            <Form>
-                <fieldset onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
+                <fieldset >
                     <legend>Enter Your Exercise Data Here</legend>
                     <Form.Group>
                         <Form.Label htmlFor='date'>Workout Date:</Form.Label>
