@@ -38,7 +38,10 @@ export default function Login (props) {
     if (redirect) return <PrivateRoute />
 
     return (
-        <Form id="login-form">
+        <Form 
+            id="login-form"
+            method="GET"
+            action={`api/User/${user.id}/userGetById`}>
             <fieldset>
                 <legend>Login To Your Account</legend>
                 <Form.Group id="login-email">

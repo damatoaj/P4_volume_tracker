@@ -40,7 +40,7 @@ export default function Signup(props) {
         <Form 
             id="signup-form"
             method="POST"
-            action={`/api/User/${user.id}/user`}
+            action="/api/User/userCreate"
         >
             <fieldset>
                 <legend>Signup for the App</legend>

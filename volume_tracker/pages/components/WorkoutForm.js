@@ -32,7 +32,10 @@ export default function WorkoutForm (props) {
 
     return(
 
-            <Form id="workout-form">
+            <Form 
+                id="workout-form"
+                method="POST"
+                action={`api/User/[id]/workoutCreate`}>
                 <fieldset >
                     <legend>Enter Your Exercise Data Here</legend>
                     <Form.Group id="workout-date">
