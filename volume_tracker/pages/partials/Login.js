@@ -50,6 +50,15 @@ export default function Login (props) {
                         onChange={e=> setEmail(e.target.value)}
                     />
                 </Form.Group>
+                <Form.Group id="login-password">
+                    <Form.Label htmlFor='password'>Password:</Form.Label>
+                    <Form.Control 
+                        type='password' 
+                        id='password' 
+                        name='password'
+                        onChange={e=> props.setPassword(e.target.value)}
+                    />
+                </Form.Group>
                 <Button 
                     as="input"
                     disabled={isLoading} 

@@ -6,8 +6,20 @@ export default function Auth (props) {
     const user = props.user
     return(
         <div>
-            <Signup user={user} setCurrentUser={props.setCurrentUser} handleAuth={props.handleAuth} setToken={props.setToken}/>
-            <Login user={user} setCurrentUser={props.setCurrentUser} handleAuth={props.handleAuth} setToken={props.setToken} />
+            <Signup 
+                user={user} 
+                setCurrentUser={props.setCurrentUser} 
+                handleAuth={props.handleAuth} 
+                setToken={props.setToken} 
+                setPassword={props.setPassword}
+            />
+            <Login 
+                user={user} 
+                setCurrentUser={props.setCurrentUser} 
+                handleAuth={props.handleAuth} 
+                setToken={props.setToken} 
+                setPassword={props.setPassword}
+            />
         </div>
     )
 }

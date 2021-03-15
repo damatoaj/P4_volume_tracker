@@ -24,6 +24,7 @@ export default function Header (props) {
         console.log("logging out")
         props.setToken(null);
         props.setCurrentUser([])
+        props.setPassword(null);
     };
 
 

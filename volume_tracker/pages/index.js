@@ -8,6 +8,7 @@ import Footer from '../pages/partials/Footer';
 
 import About from '../pages/components/About';
 import Content from './components/Content';
+import user from './api/dummyPerson';
 // import { propTypes } from 'react-bootstrap/esm/Image';
  
 
@@ -15,6 +16,7 @@ export default function Home() {
   const[currentUser, setCurrentUser] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
+  const [password, setPassword] = useState(null);
 
   const handleAuth = user => {
     console.log("handling authentication...")
@@ -36,13 +38,15 @@ export default function Home() {
       </Head>
       <div >
         <Header 
+          setPassword={setPassword}
           setCurrentUser={setCurrentUser}
           currentUser={currentUser}
           handleAuth={handleAuth}
           setToken={setToken}
         />
         <About />
-        <Content 
+        <Content
+          setPassword={setPassword}
           setCurrentUser={setCurrentUser}
           isAuthenticated={isAuthenticated}
           handleAuth={handleAuth}
