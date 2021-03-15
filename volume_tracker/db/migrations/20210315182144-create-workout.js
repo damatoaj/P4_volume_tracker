@@ -17,6 +17,9 @@ module.exports = {
       heartRate: {
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER
+      },
       volume: {
         type: Sequelize.INTEGER
       },

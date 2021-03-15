@@ -37,7 +37,11 @@ export default function Signup(props) {
     if(redirect) return( <PrivateRoute />)
 
     return (
-        <Form id="signup-form">
+        <Form 
+            id="signup-form"
+            method="POST"
+            action={`/api/User/${user.id}/user`}
+        >
             <fieldset>
                 <legend>Signup for the App</legend>
                 <Form.Group id="signup-fname">

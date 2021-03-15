@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
+import Router from 'next/router';
 
 
 
@@ -24,6 +25,7 @@ export default function WorkoutForm (props) {
         setLoading(true)
         e.preventDefault();
         console.log("Submitting data")
+        Router.post
     };
 
     
