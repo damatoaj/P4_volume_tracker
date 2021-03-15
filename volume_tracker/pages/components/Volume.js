@@ -31,13 +31,14 @@ export default function Volume (props) {
                         <Label 
                             value="minutes" 
                             angle="90" 
-                            position="right" 
+                            position="right"
+                            color="white" 
                         />
                     </YAxis>
                     <Tooltip />
                     <Legend verticalAlign="top"/>
-                    <Line yAxisId="left" type="monotone" dataKey="volume" stroke="#8884d8" />
-                    <Line yAxisId="right" type="monotone" dataKey="minutes" stroke="#32a852"/>
+                    <Line yAxisId="left" type="monotone" dataKey="volume" stroke="#8884d8" color="white"/>
+                    <Line yAxisId="right" type="monotone" dataKey="minutes" stroke="#32a852" color="white"/>
                 </LineChart>
             </ResponsiveContainer>
         </section>
