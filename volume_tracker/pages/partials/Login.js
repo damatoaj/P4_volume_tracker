@@ -11,7 +11,8 @@ function simulateNetworkRequest() {
 };
 
 export default function Login (props) {
-    const user = props.user
+    const password = props.password;
+    const user = props.user;
     const [email, setEmail] = useState('');
     const [redirect, setRedirect] = useState(false);
     const [isLoading, setLoading] = useState(false);
@@ -28,20 +29,24 @@ export default function Login (props) {
     const handleClick = e => {
         e.preventDefault();
         console.log("this is a login attempt")
-        setRedirect(true);
-        props.setToken(1234);
-        props.handleAuth(user)
-        setLoading(true);
-        console.log('login click working')
+        axios.get(`/api/User/[id]/userGetById`, {email, password})
+        .then(response => {
+            setRedirect(true);
+            props.setToken(1234);
+            props.handleAuth(user)
+            setLoading(true);
+            console.log(response)
+            console.log('login click working')
+            if (redirect) return <PrivateRoute />
+        })
     }
 
-    if (redirect) return <PrivateRoute />
 
     return (
         <Form 
             id="login-form"
             method="GET"
-            action={`api/User/${user.id}/userGetById`}>
+            action={`api/User/[id]/userGetById`}>
             <fieldset>
                 <legend>Login To Your Account</legend>
                 <Form.Group id="login-email">
