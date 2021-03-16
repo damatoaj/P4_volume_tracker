@@ -65,6 +65,7 @@ export default function Form (props) {
         <div id="auth-landing">
             <Auth
                 user={user}
+                password={props.password}
                 setPassword={props.setPassword}
                 setToken={props.setToken}
                 handleAuth={props.handleAuth}

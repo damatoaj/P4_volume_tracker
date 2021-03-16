@@ -11,13 +11,15 @@ export default function Auth (props) {
                 setCurrentUser={props.setCurrentUser} 
                 handleAuth={props.handleAuth} 
                 setToken={props.setToken} 
+                password={props.password}
                 setPassword={props.setPassword}
             />
             <Login 
                 user={user} 
                 setCurrentUser={props.setCurrentUser} 
                 handleAuth={props.handleAuth} 
-                setToken={props.setToken} 
+                setToken={props.setToken}
+                password={props.password}
                 setPassword={props.setPassword}
             />
         </div>

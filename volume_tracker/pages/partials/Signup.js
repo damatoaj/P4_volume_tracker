@@ -8,7 +8,8 @@ function simulateNetworkRequest() {
 };
 
 export default function Signup(props) {
-    const user = props.user
+    const user = props.user;
+    const password= props.password;
     const [fname, setFname] = useState('');
     const [lname, setLname] = useState('');
     const [email, setEmail] = useState('');
@@ -28,17 +29,17 @@ export default function Signup(props) {
     const handleClick = (e) => {
         e.preventDefault();
         console.log('handle click works')
-        axios.post(`/api/User/userCreate`, {fname, lname, email})
+        axios.post(`/api/User/userCreate`, {fname, lname, email, password})
         .then(response => {
             setLoading(true);
             setRedirect(true);
             props.setToken(1234)
             props.handleAuth(user)
             console.log(response)
+            if(redirect) return( <PrivateRoute />)
         })
     }
 
-    if(redirect) return( <PrivateRoute />)
 
     return (
         <Form 
@@ -54,7 +55,7 @@ export default function Signup(props) {
                         type='text' 
                         id='fname' 
                         name='fname'
-                        onChange={e=> setFname(user.fname)} 
+                        onChange={e=> setFname(e.target.value)} 
                     />
                 </Form.Group>
                 <Form.Group id="signup-lname">
