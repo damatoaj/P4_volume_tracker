@@ -2,7 +2,8 @@ const db = require('../../../db/models')
 
 
 export default async function createUser(req, res) {
-    const userCreate = await db.user.findOrCreate({
+    console.log('Help me for the love of god')
+    const [user, Create] = await db.user.findOrCreate({
         where: {
             email: req.body.email
         },
@@ -10,17 +11,6 @@ export default async function createUser(req, res) {
             fname: req.body.fname,
             lname: req.body.lname,
             password: req.body.password
-        }.then(([user, created]) => {
-            if(created) {
-                console.log(`${user.fname} was created 🥶`)
-            } else {
-                console.log(`${user.fname} has been taken 👹`)
-            }
-        }).catch(err => {
-            console.log(err, 'there was an error')
-        })
-    });
-    console.log(userCreate);
-    // res.json({byId: req.query.id, message: 'get user by id'})
-    res.json(userCreate);
+        }})
+    res.json(user)
 }

@@ -1,7 +1,7 @@
 import {useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import Card from 'react-bootstrap/Card'
+import axios from 'axios';
 
 function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 1000));
@@ -26,12 +26,16 @@ export default function Signup(props) {
     }, [isLoading])
 
     const handleClick = (e) => {
-        setLoading(true);
         e.preventDefault();
-        setRedirect(true);
-        props.setToken(1234)
-        props.handleAuth(user)
         console.log('handle click works')
+        axios.post(`/api/User/userCreate`, {fname, lname, email})
+        .then(response => {
+            setLoading(true);
+            setRedirect(true);
+            props.setToken(1234)
+            props.handleAuth(user)
+            console.log(response)
+        })
     }
 
     if(redirect) return( <PrivateRoute />)
@@ -76,7 +80,7 @@ export default function Signup(props) {
                     <Form.Control 
                         type='password' 
                         id='password' 
-                        name='passwrod'
+                        name='password'
                         onChange={e=> props.setPassword(e.target.value)}
                     />
                 </Form.Group>
