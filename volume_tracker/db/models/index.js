@@ -37,4 +37,7 @@ db.Sequelize = Sequelize;
 db.user = require('./user')(sequelize, Sequelize);
 db.workout = require('./workout')(sequelize, Sequelize);
 
+db.user.hasMany(db.workout);
+db.workout.belongsTo(db.user);
+
 module.exports = db;

@@ -42,6 +42,7 @@ export default function Form (props) {
                 setVolume={setVolume}
                 heartRate={heartRate}
                 setHeartRate={setHeartRate}
+                user={props.user}
             />
             
             <Carousel id="carousel">

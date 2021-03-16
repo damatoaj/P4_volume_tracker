@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Router from 'next/router';
+import axios from 'axios';
 
 
 
@@ -12,6 +13,11 @@ function simulateNetworkRequest() {
 
 export default function WorkoutForm (props) {
     const [isLoading, setLoading] = useState(false);
+    const date = props.date;
+    const minutes = props.minutes;
+    const heartRate = props.heartRate;
+    const volume = props.volume;
+    const user = props.user;
 
     useEffect(() => {
         if (isLoading) {
@@ -22,10 +28,17 @@ export default function WorkoutForm (props) {
     }, [isLoading])
     
     const handleClick = e => {
-        setLoading(true)
         e.preventDefault();
-        console.log("Submitting data")
-        Router.post
+        console.log('attemtp to make workout')
+        axios.post(`/api/User/[id]/workoutCreate`, {date, minutes, heartRate, volume, user})
+        .then(response => {
+            setLoading(true)
+            console.log(response.data)
+            console.log("Submitting data")
+            // Router.post
+        }).catch(err=> {
+            console.log(err, 'cannot submit data')
+        })
     };
 
     
@@ -34,8 +47,7 @@ export default function WorkoutForm (props) {
 
             <Form 
                 id="workout-form"
-                method="POST"
-                action={`api/User/[id]/workoutCreate`}>
+            >
                 <fieldset >
                     <legend>Enter Your Exercise Data Here</legend>
                     <Form.Group id="workout-date">
@@ -48,13 +60,13 @@ export default function WorkoutForm (props) {
                             onChange={e => props.setDate(Date.parse(e.target.value))}
                         />
                     </Form.Group>
-                    <Form.Group id="workout-time">
-                        <Form.Label htmlFor='time'>Workout Time (minutes):</Form.Label>
+                    <Form.Group id="workout-minutes">
+                        <Form.Label htmlFor='minutes'>Workout Time (minutes):</Form.Label>
                         <Form.Control
                             className="form-control"
                             type='number' 
-                            id='time' 
-                            name='time'
+                            id='minutes' 
+                            name='minutes'
                             onChange={e => props.setMinutes(e.target.value)}
                         />
                     </Form.Group>

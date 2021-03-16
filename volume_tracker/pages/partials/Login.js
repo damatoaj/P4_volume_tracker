@@ -45,20 +45,6 @@ export default function Login (props) {
         })
     }
 
-    const loginUser = e => {
-        e.preventDefault()
-        const res =  axios('api/User/[id]/userGetById', {
-            body: JSON.stringify({
-                email: e.target.email.value
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            method: 'GET'
-        })
-        console.log(email)
-        console.log('loginUser is working')
-    }
 
     return (
         <Form 

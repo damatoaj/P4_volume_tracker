@@ -46,6 +46,7 @@ export default function Home() {
         />
         <About />
         <Content
+          user={currentUser}
           password={password}
           setPassword={setPassword}
           setCurrentUser={setCurrentUser}
