@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Card from 'react-bootstrap/Card';
 import Router from 'next/router';
 import axios from 'axios';
+import moment from 'moment';
 
 
 
@@ -13,7 +14,7 @@ function simulateNetworkRequest() {
 
 export default function WorkoutForm (props) {
     const [isLoading, setLoading] = useState(false);
-    const date = props.date;
+    let date = moment(props.date).format('YYYY-MM-DD');
     const minutes = props.minutes;
     const heartRate = props.heartRate;
     const volume = props.volume;
