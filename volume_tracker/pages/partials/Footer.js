@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Footer() {
     return (
         <footer>
@@ -8,9 +10,30 @@ export default function Footer() {
                 </p>
             </span>
             <span>
-                <a href="https://www.linkedin.com/in/arthur-d-amato-45b6b169/">LinkedIn</a>
-                <a href="https://github.com/damatoaj">GitHub</a>
-                <a href="https://arthurdamato.wordpress.com/">WordPress</a>
+                <a href="https://github.com/damatoaj">
+                    <Image 
+                        src="/GitHub-Logo.png"
+                        alt="Github Logo"
+                        width={100}
+                        height={100}
+                    />
+                </a>
+                <a href="https://www.linkedin.com/in/arthur-d-amato-45b6b169/">
+                    <Image 
+                        src="/linked_in_logo.svg"
+                        alt="LinkedIn Logo"
+                        width={100}
+                        height={100}
+                    />
+                </a>
+                <a href="https://arthurdamato.wordpress.com/">
+                <Image 
+                    src="/wordpress_logo.svg"
+                    alt="WordPress Logo"
+                    width={100}
+                    height={100}
+                />
+                </a>
             </span>
         </footer>
     )

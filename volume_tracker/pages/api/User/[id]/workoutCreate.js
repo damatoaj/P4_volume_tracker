@@ -1,8 +1,8 @@
 const db = require('../../../../db/models')
 
 
-export default async function createWorkoutsByUserId(req, res) {
-    const workoutCreate = await db.workout.create({
+export default async function workoutCreate(req, res) {
+    const workoutCreate = await db.workout.findOrCreate({
         where: {
             date: req.body.date,
             minutes: req.body.minutes,

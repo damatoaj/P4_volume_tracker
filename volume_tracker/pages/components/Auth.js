@@ -3,11 +3,10 @@ import Signup from '../partials/Signup';
 
 export default function Auth (props) {
     console.log(props)
-    const user = props.user
+    
     return(
         <div>
             <Signup 
-                user={user} 
                 setCurrentUser={props.setCurrentUser} 
                 handleAuth={props.handleAuth} 
                 setToken={props.setToken} 
@@ -15,7 +14,7 @@ export default function Auth (props) {
                 setPassword={props.setPassword}
             />
             <Login 
-                user={user} 
+                
                 setCurrentUser={props.setCurrentUser} 
                 handleAuth={props.handleAuth} 
                 setToken={props.setToken}

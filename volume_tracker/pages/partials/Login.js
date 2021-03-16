@@ -16,6 +16,7 @@ export default function Login (props) {
     const [email, setEmail] = useState('');
     const [redirect, setRedirect] = useState(false);
     const [isLoading, setLoading] = useState(false);
+    console.log(email)
 
     useEffect(() => {
         if (isLoading) {
@@ -29,24 +30,42 @@ export default function Login (props) {
     const handleClick = e => {
         e.preventDefault();
         console.log("this is a login attempt")
-        axios.get(`/api/User/[id]/userGetById`, {email, password})
+        console.log(email)
+        axios.post(`/api/User/userLogin`, {email, password})
         .then(response => {
             setRedirect(true);
             props.setToken(1234);
-            props.handleAuth(user)
+            props.handleAuth(response.data)
             setLoading(true);
             console.log(response)
             console.log('login click working')
             if (redirect) return <PrivateRoute />
+        }).catch(err => {
+            console.log(err, 'KILL ME PLEASE')
         })
     }
 
+    const loginUser = e => {
+        e.preventDefault()
+        const res =  axios('api/User/[id]/userGetById', {
+            body: JSON.stringify({
+                email: e.target.email.value
+            }),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'GET'
+        })
+        console.log(email)
+        console.log('loginUser is working')
+    }
 
     return (
         <Form 
             id="login-form"
-            method="GET"
-            action={`api/User/[id]/userGetById`}>
+            // onSubmit={loginUser}
+
+        >
             <fieldset>
                 <legend>Login To Your Account</legend>
                 <Form.Group id="login-email">
@@ -55,7 +74,9 @@ export default function Login (props) {
                         type='email' 
                         id='email' 
                         name='email'
+                        autoComplete="email"
                         onChange={e=> setEmail(e.target.value)}
+                        required
                     />
                 </Form.Group>
                 <Form.Group id="login-password">
@@ -64,7 +85,9 @@ export default function Login (props) {
                         type='password' 
                         id='password' 
                         name='password'
+                        autoComplete='password'
                         onChange={e=> props.setPassword(e.target.value)}
+                        required
                     />
                 </Form.Group>
                 <Button 

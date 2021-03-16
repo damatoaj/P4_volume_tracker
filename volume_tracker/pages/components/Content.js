@@ -20,10 +20,11 @@ export default function Form (props) {
     const [heartRate, setHeartRate] = useState(0)
     const [volume, setVolume] = useState(0);
 
+
     console.log(date, minutes, heartRate, volume)
 
     const data = dummyData;
-    const user = dummyPerson;
+    // const user = dummyPerson;
 
     useEffect (() => {
         setVolume(minutes*heartRate)
@@ -64,7 +65,6 @@ export default function Form (props) {
         :
         <div id="auth-landing">
             <Auth
-                user={user}
                 password={props.password}
                 setPassword={props.setPassword}
                 setToken={props.setToken}
