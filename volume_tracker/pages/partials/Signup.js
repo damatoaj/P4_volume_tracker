@@ -34,7 +34,7 @@ export default function Signup(props) {
             setLoading(true);
             setRedirect(true);
             props.setToken(1234)
-            props.handleAuth(user)
+            props.handleAuth(response.data)
             console.log(response)
             if(redirect) return( <PrivateRoute />)
         })
