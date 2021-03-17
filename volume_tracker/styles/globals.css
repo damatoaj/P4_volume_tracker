@@ -162,24 +162,24 @@ section {
 
 #volume-graph {
   background-image: linear-gradient(
-    rgba(0,0,0,.5),
-    rgba(0,0,0,.5)
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255,.5)
   );
   color: white;
 }
 
 #heartRate-graph {
   background-image: linear-gradient(
-    rgba(0,0,0,.5),
-    rgba(0,0,0,.5)
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255,.5)
   );
   color: white;
 }
 
 #exerciseTime-graph {
   background-image: linear-gradient(
-    rgba(0,0,0,.5),
-    rgba(0,0,0,.5)
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255,.5)
   );
   color: white;
 }
@@ -221,14 +221,20 @@ tspan {
 #heartRate-container {
   height: 35rem;
   width: 95%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 #volume-container {
   height: 35rem;
   width: 95%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 #minutes-container {
   height: 35rem;
   width: 95%;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
