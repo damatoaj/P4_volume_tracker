@@ -17,7 +17,7 @@ export default function Auth (props) {
                 setData={props.setData}
                 setCurrentUser={props.setCurrentUser} 
                 handleAuth={props.handleAuth} 
-                // setToken={props.setToken}
+                setToken={props.setToken}
                 password={props.password}
                 setPassword={props.setPassword}
             />

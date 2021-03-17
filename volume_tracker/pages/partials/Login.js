@@ -33,7 +33,7 @@ export default function Login (props) {
         axios.post(`/api/User/userLogin`, {email, password})
         .then(response => {
             setRedirect(true);
-            props.setToken(1234);
+            props.setToken(localStorage.getItem('jwtToken'));
             props.handleAuth(response.data.user)
             props.setData(response.data.data)
             setLoading(true);
