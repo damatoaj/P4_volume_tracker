@@ -9,21 +9,24 @@ import Footer from '../pages/partials/Footer';
 import About from '../pages/components/About';
 import Content from './components/Content';
 import user from './api/dummyPerson';
-// import { propTypes } from 'react-bootstrap/esm/Image';
+
  
 
 export default function Home() {
   const[currentUser, setCurrentUser] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState('');
   const [password, setPassword] = useState(null);
   const [data, setData] = useState([]);
+
+
 
   const handleAuth = user => {
     console.log("handling authentication...")
     if(user) {
       setCurrentUser(user);
       setIsAuthenticated(true);
+      
     } else {
       setCurrentUser(null);
       setIsAuthenticated(false);

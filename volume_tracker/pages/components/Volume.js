@@ -8,7 +8,7 @@ export default function Volume (props) {
     return (
         <Container fluid id="volume-container">
         <h1>Volume Compared to Minutes</h1>
-            <ResponsiveContainer height="80%" width={730}>
+            <ResponsiveContainer height="100%" width="100%">
                 <LineChart 
                     width={730} 
                     height={250} 
