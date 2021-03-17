@@ -12,6 +12,7 @@ export default function Footer() {
             <span>
                 <a href="https://github.com/damatoaj">
                     <Image 
+                        id="github-logo"
                         src="/GitHub-Logo.png"
                         alt="Github Logo"
                         width={100}
@@ -20,6 +21,7 @@ export default function Footer() {
                 </a>
                 <a href="https://www.linkedin.com/in/arthur-d-amato-45b6b169/">
                     <Image 
+                        id="linkedin-logo"
                         src="/linked_in_logo.svg"
                         alt="LinkedIn Logo"
                         width={100}
@@ -28,6 +30,7 @@ export default function Footer() {
                 </a>
                 <a href="https://arthurdamato.wordpress.com/">
                 <Image 
+                    id="wordpress-logo"
                     src="/wordpress_logo.svg"
                     alt="WordPress Logo"
                     width={100}

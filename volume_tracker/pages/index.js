@@ -30,7 +30,7 @@ export default function Home() {
     } else {
       setCurrentUser(null);
       setIsAuthenticated(false);
-      // localStorage.removeItem('jwtToken');
+      localStorage.removeItem('jwtToken');
     }
   }
 

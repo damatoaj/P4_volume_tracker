@@ -22,7 +22,7 @@ export default function Header (props) {
         setLoading(true);
         e.preventDefault();
         console.log("logging out")
-        // props.setToken(null);
+        props.setToken(null);
         props.setCurrentUser(null)
         props.setPassword(null);
         props.setData([])
