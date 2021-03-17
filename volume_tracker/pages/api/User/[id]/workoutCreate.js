@@ -17,20 +17,11 @@ export default async function workoutCreate(req, res) {
         volume: req.body.volume
     })
     console.log(workout)
-    // const [workoutCreate, Create] = await db.workout.create({
-    //     where: {
-    //         date: req.body.date,
-    //         minutes: req.body.minutes,
-    //         heartRate: req.body.heartRate,
-    //         volume: req.body.volume
-    //     }.then(([workout, created]) => {
-    //         workout.addUser(req.user).then(relation => {
-    //             console.log(`${workout.date} added to ${req.user}`)
-    //             console.log(relation)
-    //         })
-    //     })
-    // });  
-    // res.json(workoutCreate)
+    const data = await user.getWorkouts()
+    console.log(workout.volume)
+
+
+    res.send(data)
 }
 //how do you write line 6
 //what do you want to do line 13; add user one to many not join table

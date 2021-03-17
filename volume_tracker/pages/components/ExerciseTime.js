@@ -1,5 +1,5 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
-
+import Container from 'react-bootstrap/Container';
 export default function ExerciseTime (props) {
     const data = props.data;
     console.log(data)
@@ -7,7 +7,7 @@ export default function ExerciseTime (props) {
     // console.log(data.date)
 
     return (
-        <section>
+        <Container fluid id="minutes-container">
             <h1>Minutes compared to Heart Rate</h1>
             <ResponsiveContainer height="100%" width="100%">
                 <LineChart 
@@ -41,6 +41,6 @@ export default function ExerciseTime (props) {
                     <Line yAxisId="right" type="monotone" dataKey="heartRate" stroke="#db2b14" />
                 </LineChart>
             </ResponsiveContainer>
-        </section>
+        </Container>
     )
 }

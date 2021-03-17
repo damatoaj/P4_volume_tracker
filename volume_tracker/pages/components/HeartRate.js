@@ -1,12 +1,12 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
-
+import Container from 'react-bootstrap/Container'
 
 export default function HeartRate(props) {
     const data = props.data
     // console.log(props.data)
     // console.log(`Heart Rate, ${data} 🤬`)
     return (
-        <section>
+        <Container fluid id="heartRate-container">
             <h1>Volume Compared to Heart Rate</h1>
             <ResponsiveContainer height="100%" width="100%">
                 <LineChart 
@@ -40,6 +40,6 @@ export default function HeartRate(props) {
                     <Line yAxisId="right" type="monotone" dataKey="heartRate" stroke="#db2b14" />
                 </LineChart>
             </ResponsiveContainer>
-        </section>
+        </Container>
     )
 };

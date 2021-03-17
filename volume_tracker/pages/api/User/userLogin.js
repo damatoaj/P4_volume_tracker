@@ -8,6 +8,10 @@ export default async function userLogin(req, res) {
             email: req.body.email
         }
     })
+
+    const data = await user.getWorkouts()
+
     console.log(user)
-    res.json(user)
+    console.log(data)
+    res.json({user:user, data:data})
 }

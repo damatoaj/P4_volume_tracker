@@ -20,10 +20,11 @@ export default function Form (props) {
     const [heartRate, setHeartRate] = useState(0)
     const [volume, setVolume] = useState(0);
 
+    const data = props.data;
 
-    console.log(date, minutes, heartRate, volume)
+    // console.log(date, minutes, heartRate, volume)
 
-    const data = dummyData;
+    // const data = dummyData;
     // const user = dummyPerson;
 
     useEffect (() => {
@@ -34,6 +35,7 @@ export default function Form (props) {
         props.token ? 
         <div id="landing-page">
             <WorkoutForm 
+                setData={props.setData}
                 date={date}
                 setDate={setDate}
                 minutes={minutes}
@@ -66,6 +68,7 @@ export default function Form (props) {
         :
         <div id="auth-landing">
             <Auth
+                setData={props.setData}
                 password={props.password}
                 setPassword={props.setPassword}
                 setToken={props.setToken}

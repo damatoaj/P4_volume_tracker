@@ -17,6 +17,7 @@ export default function Home() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [token, setToken] = useState(null);
   const [password, setPassword] = useState(null);
+  const [data, setData] = useState([]);
 
   const handleAuth = user => {
     console.log("handling authentication...")
@@ -37,7 +38,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div >
-        <Header 
+        <Header
+          setData={setData}
           setPassword={setPassword}
           setCurrentUser={setCurrentUser}
           currentUser={currentUser}
@@ -46,6 +48,8 @@ export default function Home() {
         />
         <About />
         <Content
+          setData={setData}
+          data={data}
           user={currentUser}
           password={password}
           setPassword={setPassword}

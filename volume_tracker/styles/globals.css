@@ -217,3 +217,18 @@ tspan {
   color: white;
   
 }
+
+#heartRate-container {
+  height: 35rem;
+  width: 95%;
+}
+
+#volume-container {
+  height: 35rem;
+  width: 95%;
+}
+
+#minutes-container {
+  height: 35rem;
+  width: 95%;
+}

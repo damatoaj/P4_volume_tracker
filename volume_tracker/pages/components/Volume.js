@@ -1,14 +1,14 @@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Label } from 'recharts';
-
+import Container from 'react-bootstrap/Container';
 
 export default function Volume (props) {
     const data = props.data
     // console.log(`Volume, ${data} 😭`)
 
     return (
-        <section>
+        <Container fluid id="volume-container">
         <h1>Volume Compared to Minutes</h1>
-            <ResponsiveContainer height="100%" width="100%">
+            <ResponsiveContainer height="80%" width={730}>
                 <LineChart 
                     width={730} 
                     height={250} 
@@ -41,6 +41,6 @@ export default function Volume (props) {
                     <Line yAxisId="right" type="monotone" dataKey="minutes" stroke="#32a852" color="white"/>
                 </LineChart>
             </ResponsiveContainer>
-        </section>
+        </Container>
     )
 }

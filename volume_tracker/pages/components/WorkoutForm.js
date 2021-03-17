@@ -34,8 +34,9 @@ export default function WorkoutForm (props) {
         axios.post(`/api/User/[id]/workoutCreate`, {date, minutes, heartRate, volume, user})
         .then(response => {
             setLoading(true)
-            console.log(response.data)
+            // console.log(response.data)
             console.log("Submitting data")
+            props.setData(response.data)
             // Router.post
         }).catch(err=> {
             console.log(err, 'cannot submit data')

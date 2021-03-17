@@ -26,7 +26,6 @@ export default function Login (props) {
         }
     }, [isLoading])
 
-
     const handleClick = e => {
         e.preventDefault();
         console.log("this is a login attempt")
@@ -35,7 +34,8 @@ export default function Login (props) {
         .then(response => {
             setRedirect(true);
             props.setToken(1234);
-            props.handleAuth(response.data)
+            props.handleAuth(response.data.user)
+            props.setData(response.data.data)
             setLoading(true);
             console.log(response)
             console.log('login click working')
