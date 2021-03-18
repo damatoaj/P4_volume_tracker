@@ -1,92 +1,92 @@
 const dummyData = [
     {
-    'id': '1',
+    id: 1,
     'date': '03-01-2021',
-    'length': 20,
+    'minutes': 20,
     'heartRate': 120,
     'volume': 2400
     }, {
-    'id': '2',
+    id: 2,
     'date': '03-03-2021',
-    'length': 20,
+    'minutes': 20,
     'heartRate': 120,
     'volume': 2400
     }, {
-    'id': '3',
+    id: 3,
     'date': '03-05-2021',
-    'length': 25,
+    'minutes': 25,
     'heartRate': 123,
     'volume': 3075
     }, { 
-    'id': '4',
+    id: 4,
     'date': '03-07-2021',
-    'length': 23,
+    'minutes': 23,
     'heartRate': 125,
     'volume': 2875
     },{ 
-    'id': '5',
+    id: 5,
     'date': '03-09-2021',
-    'length': 28,
+    'minutes': 28,
     'heartRate': 125,
     'volume': 3500
     }, { 
-    'id': '6',
+    id: 6,
     'date': '03-11-2021',
-    'length': 23,
+    'minutes': 23,
     'heartRate': 130,
     'volume': 2990
     }, { 
-    'id': '7',
+    id: 7,
     'date': '03-13-2021',
-    'length': 30,
+    'minutes': 30,
     'heartRate': 125,
     'volume': 3750
     }, { 
-    'id': '8',
+    id: 8,
     'date': '03-15-2021',
-    'length': 30,
+    'minutes': 30,
     'heartRate': 135,
     'volume': 4050
     }, { 
-    'id': '9',
+    id: 9,
     'date': '03-17-2021',
-    'length': 30,
+    'minutes': 30,
     'heartRate': 122,
     'volume': 3660
     }, { 
-    'id': '10',
+    id: 10,
     'date': '03-19-2021',
-    'length': 40,
+    'minutes': 20,
     'heartRate': 135,
     'volume': 5400
     }, { 
-    'id': '11',
+    id: 11,
     'date': '03-21-2021',
-    'length': 35,
+    'minutes': 35,
     'heartRate': 140,
     'volume': 4900
     }, { 
-    'id': '12',
+    id: 12,
     'date': '03-23-2021',
-    'length': 50,
+    'minutes': 50,
     'heartRate': 130,
     'volume': 6500
     },{ 
-    'id': '13',
+    id: 13,
     'date': '03-25-2021',
-    'length': 50,
+    'minutes': 50,
     'heartRate': 130,
     'volume': 6500
     }, { 
-    'id': '14',
+    id: 14,
     'date': '03-27-2021',
-    'length': 55,
+    'minutes': 55,
     'heartRate': 125,
     'volume': 6875
     }, { 
-    'id': '15',
+    id: 15,
     'date': '03-29-2021',
-    'length': 60,
+    'minutes': 60,
     'heartRate': 125,
     'volume': 7500
     }
